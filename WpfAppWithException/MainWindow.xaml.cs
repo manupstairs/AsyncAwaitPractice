@@ -29,7 +29,7 @@ namespace WpfAppWithException
 
         private void ButtonCannotCatch_Click(object sender, RoutedEventArgs e)
         {
-            ExceptionTester.AsyncVoidExceptions_CannotBeCaughtByCatch();
+            ExceptionTester.SomethingWrongCannotCatch();
         }
     }
 }

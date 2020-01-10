@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="buttonCannotCatch" Click="ButtonCannotCatch_Click" Width="100" Height="50">Throw Exception, but cannot catch</Button>
+        <Button x:Name="buttonCannotCatch" Click="ButtonCannotCatch_Click" Height="50">Throw Exception, but cannot catch</Button>
     </Grid>
 </Window>

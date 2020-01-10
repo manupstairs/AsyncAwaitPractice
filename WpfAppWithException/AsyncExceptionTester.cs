@@ -7,21 +7,21 @@ namespace WpfAppWithException
 {
     class AsyncExceptionTester
     {
-        private async void ThrowExceptionAsync()
+        private async void SomethingWrongAsync()
         {
             await Task.Delay(100);
             throw new InvalidOperationException();
         }
 
-        public void AsyncVoidExceptions_CannotBeCaughtByCatch()
+        public void SomethingWrongCannotCatch()
         {
             try
             {
-                ThrowExceptionAsync();
+                SomethingWrongAsync();
             }
             catch (Exception)
             {
-                // The exception is never caught here!
+                // Sometimes we write log here, but the exception is never caught!
                 throw;
             }
         }
