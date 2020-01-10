@@ -31,5 +31,10 @@ namespace WpfAppWithException
         {
             ExceptionTester.SomethingWrongCannotCatch();
         }
+
+        private void ButtonNothing_Click(object sender, RoutedEventArgs e)
+        {
+            ExceptionTester.TaskWrongWithNothing();
+        }
     }
 }

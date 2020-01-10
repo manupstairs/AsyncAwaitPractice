@@ -25,5 +25,24 @@ namespace WpfAppWithException
                 throw;
             }
         }
+
+        private async Task TaskWrongAsync()
+        {
+            await Task.Delay(100);
+            throw new InvalidOperationException();
+        }
+
+        public void TaskWrongWithNothing()
+        {
+            try
+            {
+                TaskWrongAsync();
+            }
+            catch (Exception)
+            {
+                // Sometimes we write log here, but the exception is never caught!
+                throw;
+            }
+        }
     }
 }

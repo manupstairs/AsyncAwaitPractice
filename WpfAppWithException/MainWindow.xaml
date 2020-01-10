@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfAppWithException"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="buttonCannotCatch" Click="ButtonCannotCatch_Click" Height="50">Throw Exception, but cannot catch</Button>
-    </Grid>
+    <StackPanel>
+        <Button x:Name="buttonCannotCatch" Click="ButtonCannotCatch_Click" Height="50">SomethingWrongCannotCatch</Button>
+        <Button x:Name="buttonNothing" Click="ButtonNothing_Click"  Height="50">TaskWrongWithNothing</Button>
+    </StackPanel>
 </Window>
