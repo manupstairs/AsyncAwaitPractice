@@ -9,5 +9,7 @@
     <StackPanel>
         <Button x:Name="buttonCannotCatch" Click="ButtonCannotCatch_Click" Height="50">SomethingWrongCannotCatch</Button>
         <Button x:Name="buttonNothing" Click="ButtonNothing_Click"  Height="50">TaskWrongWithNothing</Button>
+        <Button x:Name="buttonCatch" Click="ButtonCatch_Click"  Height="50">TaskWrongButCatch</Button>
+        <Button x:Name="buttonTaskResult" Click="ButtonTaskResult_Click"  Height="50">TaskWrongWithResult</Button>
     </StackPanel>
 </Window>

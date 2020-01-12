@@ -36,5 +36,15 @@ namespace WpfAppWithException
         {
             ExceptionTester.TaskWrongWithNothing();
         }
+
+        private void ButtonCatch_Click(object sender, RoutedEventArgs e)
+        {
+            ExceptionTester.TaskWrongButCatchAsync();
+        }
+
+        private void ButtonTaskResult_Click(object sender, RoutedEventArgs e)
+        {
+            ExceptionTester.TaskIntWrongWithResult();
+        }
     }
 }

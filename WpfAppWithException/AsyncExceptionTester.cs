@@ -44,5 +44,28 @@ namespace WpfAppWithException
                 throw;
             }
         }
+
+        public async void TaskWrongButCatchAsync()
+        {
+            try
+            {
+                await TaskWrongAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private async Task<int> TaskIntWrongAsync()
+        {
+            await Task.Delay(100);
+            throw new InvalidOperationException();
+        }
+
+        public void TaskIntWrongWithResult()
+        {
+            TaskIntWrongAsync().ContinueWith(t => t.Result);
+        }
     }
 }
