@@ -67,5 +67,30 @@ namespace WpfAppWithException
         {
             TaskIntWrongAsync().ContinueWith(t => t.Result);
         }
+
+        public async void LambdaAsyncVoidMethodAsync()
+        {
+            try
+            {
+                await Task.Run(SomethingWrongAsync);
+            }
+            catch (Exception)
+            {
+                // The exception is never caught here!
+                throw;
+            }
+        }
+
+        public async void LambdaAsyncTaskMethodAsync()
+        {
+            try
+            {
+                await Task.Run(TaskWrongAsync);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

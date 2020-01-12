@@ -46,5 +46,15 @@ namespace WpfAppWithException
         {
             ExceptionTester.TaskIntWrongWithResult();
         }
+
+        private void ButtonLambdaAsyncVoid_Click(object sender, RoutedEventArgs e)
+        {
+            ExceptionTester.LambdaAsyncVoidMethodAsync();
+        }
+
+        private void ButtonLambdaAsyncTask_Click(object sender, RoutedEventArgs e)
+        {
+            ExceptionTester.LambdaAsyncTaskMethodAsync();
+        }
     }
 }
