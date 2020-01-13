@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,11 +41,6 @@ namespace WpfAppWithException
         private void ButtonCatch_Click(object sender, RoutedEventArgs e)
         {
             ExceptionTester.TaskWrongButCatchAsync();
-        }
-
-        private void ButtonTaskResult_Click(object sender, RoutedEventArgs e)
-        {
-            ExceptionTester.TaskIntWrongWithResult();
         }
 
         private void ButtonLambdaAsyncVoid_Click(object sender, RoutedEventArgs e)

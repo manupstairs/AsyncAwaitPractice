@@ -57,17 +57,6 @@ namespace WpfAppWithException
             }
         }
 
-        private async Task<int> TaskIntWrongAsync()
-        {
-            await Task.Delay(100);
-            throw new InvalidOperationException();
-        }
-
-        public void TaskIntWrongWithResult()
-        {
-            TaskIntWrongAsync().ContinueWith(t => t.Result);
-        }
-
         public async void LambdaAsyncVoidMethodAsync()
         {
             try
