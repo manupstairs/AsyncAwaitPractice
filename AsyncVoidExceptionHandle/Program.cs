@@ -19,15 +19,8 @@ namespace AsyncVoidExceptionHandle
 
         public void TaskIntWrongWithResult()
         {
-            try
-            {
-                var result = TaskIntWrongAsync().Result;
-                Console.WriteLine(result);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            var result = TaskIntWrongAsync().Result;
+            Console.WriteLine(result);
         }
     }
 }
