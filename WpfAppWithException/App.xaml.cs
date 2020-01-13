@@ -20,6 +20,11 @@ namespace WpfAppWithException
               {
                   Debug.WriteLine(e);
               };
+
+            //TaskScheduler.UnobservedTaskException += (sender, e) =>
+            // {
+            //     Debug.WriteLine(e);
+            // };
         }
     }
 }
