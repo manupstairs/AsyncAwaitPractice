@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,7 +29,7 @@ namespace AsyncBlockSample
         private void ButtonDelayBlock_Click(object sender, RoutedEventArgs e)
         {
             Delay100msAsync().Wait();
-            this.buttonDelayBlock.Content = "Done";
+            buttonDelayBlock.Content = "Done";
         }
 
         private async Task Delay100msAsync()
@@ -44,19 +45,34 @@ namespace AsyncBlockSample
         private void ButtonDelay_Click(object sender, RoutedEventArgs e)
         {
             Delay100msWithoutContextAsync().Wait();
-            this.buttonDelay.Content = "Done";
+            buttonDelay.Content = "Done";
         }
 
         private void ButtonDelay2_Click(object sender, RoutedEventArgs e)
         {
-            var text = this.buttonDelay2.Content.ToString();
+            var text = buttonDelay2.Content.ToString();
             var length = Task.Run(async () => { return await GetLengthAsync(text); }).Result;
-            this.buttonDelay2.Content = $"Total length is {length}";
+            buttonDelay2.Content = $"Total length is {length}";
         }
 
         private async Task<int> GetLengthAsync(string text)
         {
-            await Task.Delay(1000);
+            await Task.Delay(3000);
+            return text.Length;
+        }
+
+        private void ButtonDelay3_Click(object sender, RoutedEventArgs e)
+        {
+            var text = buttonDelay3.Content.ToString();
+            var length = GetLengthWithoutContextAsync(text).Result;
+            buttonDelay3.Content = $"Button 3 total length is {length}";
+        }
+
+        private async Task<int> GetLengthWithoutContextAsync(string text)
+        {
+            await Task.Delay(3000).ConfigureAwait(false);
+            //Cannot access UI thead here, will throw exception
+            //buttonDelay3.Content = $"Try to access UI thread";
             return text.Length;
         }
     }

@@ -10,5 +10,6 @@
         <Button x:Name="buttonDelayBlock" Height="50" Click="ButtonDelayBlock_Click">Click me, but will block!</Button>
         <Button x:Name="buttonDelay" Height="50" Click="ButtonDelay_Click">Click me, no block!</Button>
         <Button x:Name="buttonDelay2" Height="50" Click="ButtonDelay2_Click">Another way, no block!</Button>
+        <Button x:Name="buttonDelay3" Height="50" Click="ButtonDelay3_Click">No block and go back to UI</Button>
     </StackPanel>
 </Window>
