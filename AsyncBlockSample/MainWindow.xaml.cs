@@ -46,5 +46,18 @@ namespace AsyncBlockSample
             Delay100msWithoutContextAsync().Wait();
             this.buttonDelay.Content = "Done";
         }
+
+        private void ButtonDelay2_Click(object sender, RoutedEventArgs e)
+        {
+            var text = this.buttonDelay2.Content.ToString();
+            var length = Task.Run(async () => { return await GetLengthAsync(text); }).Result;
+            this.buttonDelay2.Content = $"Total length is {length}";
+        }
+
+        private async Task<int> GetLengthAsync(string text)
+        {
+            await Task.Delay(1000);
+            return text.Length;
+        }
     }
 }
